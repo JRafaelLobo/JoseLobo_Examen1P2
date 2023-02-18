@@ -48,6 +48,8 @@ public class Main extends javax.swing.JFrame {
         IP = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        Mascara_Laptod = new javax.swing.JTextField();
         CrearEscritorio = new javax.swing.JFrame();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -62,15 +64,20 @@ public class Main extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         RAM = new javax.swing.JTextField();
         CAPALMACEN = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         IP_Escritorio = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        Mascara_Escritorio = new javax.swing.JTextField();
         Visualizar = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         Mostrar = new javax.swing.JTextArea();
         jLabel16 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
+        Eliminar = new javax.swing.JFrame();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -239,6 +246,8 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel18.setText("Mascara");
+
         javax.swing.GroupLayout LaptodCrearLayout = new javax.swing.GroupLayout(LaptodCrear.getContentPane());
         LaptodCrear.getContentPane().setLayout(LaptodCrearLayout);
         LaptodCrearLayout.setHorizontalGroup(
@@ -246,8 +255,12 @@ public class Main extends javax.swing.JFrame {
             .addGroup(LaptodCrearLayout.createSequentialGroup()
                 .addGroup(LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LaptodCrearLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel5))
+                    .addGroup(LaptodCrearLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel18)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(MARCA)
@@ -255,16 +268,15 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(IP)))
-                    .addGroup(LaptodCrearLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton10)
-                        .addGap(76, 76, 76)
-                        .addComponent(jButton9))
-                    .addGroup(LaptodCrearLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jLabel5)))
+                            .addComponent(IP)
+                            .addComponent(Mascara_Laptod))))
                 .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LaptodCrearLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jButton10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(76, 76, 76))
         );
         LaptodCrearLayout.setVerticalGroup(
             LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,22 +297,22 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addGroup(LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LaptodCrearLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LaptodCrearLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                        .addGroup(LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton10)
-                            .addComponent(jButton9))
-                        .addGap(52, 52, 52))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Mascara_Laptod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(LaptodCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jButton10))
+                .addGap(51, 51, 51))
         );
 
-        CrearEscritorio.setPreferredSize(new java.awt.Dimension(400, 364));
+        CrearEscritorio.setPreferredSize(new java.awt.Dimension(286, 493));
         CrearEscritorio.setResizable(false);
-        CrearEscritorio.setSize(new java.awt.Dimension(400, 364));
+        CrearEscritorio.setSize(new java.awt.Dimension(286, 493));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setText("Crear PC de Escritorio");
@@ -341,18 +353,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         jLabel15.setText("IP");
+
+        jLabel19.setText("Mascara");
 
         javax.swing.GroupLayout CrearEscritorioLayout = new javax.swing.GroupLayout(CrearEscritorio.getContentPane());
         CrearEscritorio.getContentPane().setLayout(CrearEscritorioLayout);
@@ -375,34 +378,29 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jButton11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton12)))
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(CrearEscritorioLayout.createSequentialGroup()
                         .addGroup(CrearEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
                             .addComponent(jLabel11)
                             .addGroup(CrearEscritorioLayout.createSequentialGroup()
                                 .addGap(25, 25, 25)
                                 .addComponent(jLabel10))
-                            .addComponent(RAM, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CrearEscritorioLayout.createSequentialGroup()
-                        .addGroup(CrearEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RAM, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15)
-                            .addComponent(IP_Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(IP_Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Mascara_Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 19, Short.MAX_VALUE))))
         );
         CrearEscritorioLayout.setVerticalGroup(
             CrearEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearEscritorioLayout.createSequentialGroup()
-                .addGroup(CrearEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CrearEscritorioLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -419,13 +417,20 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IP_Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Mascara_Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(CrearEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11)
                     .addComponent(jButton12))
                 .addGap(21, 21, 21))
         );
 
+        Visualizar.setSize(new java.awt.Dimension(389, 313));
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(389, 313));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Mostrar.setColumns(20);
@@ -455,6 +460,34 @@ public class Main extends javax.swing.JFrame {
         VisualizarLayout.setVerticalGroup(
             VisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel17.setText("Eliminar");
+
+        jScrollPane5.setViewportView(jList1);
+
+        javax.swing.GroupLayout EliminarLayout = new javax.swing.GroupLayout(Eliminar.getContentPane());
+        Eliminar.getContentPane().setLayout(EliminarLayout);
+        EliminarLayout.setHorizontalGroup(
+            EliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EliminarLayout.createSequentialGroup()
+                .addGroup(EliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EliminarLayout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jLabel17))
+                    .addGroup(EliminarLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        EliminarLayout.setVerticalGroup(
+            EliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EliminarLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -569,13 +602,13 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
 
-        Laptop L = new Laptop(MARCA.getText(), DEFPANTALLA.getText(), RGB.getSelectedValue().contains("Si"), IP.getText());
+        Laptop L = new Laptop(MARCA.getText(), DEFPANTALLA.getText(), RGB.getSelectedValue().contains("Si"), IP.getText(),Mascara_Laptod.getText());
         PCs.add(L);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        PC_Escritorio E = new PC_Escritorio(Integer.parseInt(RAM.getText()), Integer.parseInt(CAPALMACEN.getText()), TipoDeAlmacenamiento.getSelectedValue(), GRAFICA.getSelectedValue().contains("Si"), IP_Escritorio.getText());
+        PC_Escritorio E = new PC_Escritorio(Integer.parseInt(RAM.getText()), Integer.parseInt(CAPALMACEN.getText()), TipoDeAlmacenamiento.getSelectedValue(), GRAFICA.getSelectedValue().contains("Si"), IP_Escritorio.getText(),Mascara_Escritorio.getText());
         PCs.add(E);
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -587,6 +620,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Mostrar.setText(PCs.toString());
         CRUD.setVisible(false);
         Visualizar.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -641,12 +675,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame CRUD;
     private javax.swing.JFrame CrearEscritorio;
     private javax.swing.JTextField DEFPANTALLA;
+    private javax.swing.JFrame Eliminar;
     private javax.swing.JList<String> GRAFICA;
     private javax.swing.JTextField IP;
     private javax.swing.JTextField IP_Escritorio;
     private javax.swing.JFrame LaptodCrear;
     private javax.swing.JFrame LoT;
     private javax.swing.JTextField MARCA;
+    private javax.swing.JTextField Mascara_Escritorio;
+    private javax.swing.JTextField Mascara_Laptod;
     private javax.swing.JTextArea Mostrar;
     private javax.swing.JTextField RAM;
     private javax.swing.JList<String> RGB;
@@ -674,6 +711,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -682,14 +722,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
 
 //Mis  Variables
-    private ArrayList<Object> PCs = new ArrayList();
+    private ArrayList<PC> PCs = new ArrayList();
 }

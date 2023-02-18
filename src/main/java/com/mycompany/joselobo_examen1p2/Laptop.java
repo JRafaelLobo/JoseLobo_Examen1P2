@@ -1,6 +1,8 @@
 package com.mycompany.joselobo_examen1p2;
+
 public class Laptop extends PC {
-    String marca,definicion;
+
+    String marca, definicion;
     boolean traeRGB;
 
     public Laptop(String marca, String definicion, boolean traeRGB) {
@@ -12,8 +14,8 @@ public class Laptop extends PC {
     public Laptop() {
     }
 
-    public Laptop(String marca, String definicion, boolean traeRGB, String ip) {
-        super(ip);
+    public Laptop(String marca, String definicion, boolean traeRGB, String ip, String mascara) {
+        super(ip, mascara);
         this.marca = marca;
         this.definicion = definicion;
         this.traeRGB = traeRGB;
@@ -47,5 +49,5 @@ public class Laptop extends PC {
     public String toString() {
         return "Laptop{" + "marca=" + marca + ", definicion=" + definicion + ", traeRGB=" + traeRGB + '}';
     }
-    
+
 }

@@ -1,6 +1,8 @@
 package com.mycompany.joselobo_examen1p2;
-public class PC_Escritorio extends PC{
-    int ram,almacen;
+
+public class PC_Escritorio extends PC {
+
+    int ram, almacen;
     String tipoAlmacen;
     boolean tieneTarjetaGrafica;
 
@@ -14,8 +16,8 @@ public class PC_Escritorio extends PC{
         this.tieneTarjetaGrafica = tieneTarjetaGrafica;
     }
 
-    public PC_Escritorio(int ram, int almacen, String tipoAlmacen, boolean tieneTarjetaGrafica, String ip) {
-        super(ip);
+    public PC_Escritorio(int ram, int almacen, String tipoAlmacen, boolean tieneTarjetaGrafica, String ip, String mascara) {
+        super(ip, mascara);
         this.ram = ram;
         this.almacen = almacen;
         this.tipoAlmacen = tipoAlmacen;
@@ -56,11 +58,11 @@ public class PC_Escritorio extends PC{
 
     @Override
     public String toString() {
-        return super.toString()+"PC_Escritorio{" + "ram=" + ram + ", almacen=" + almacen + ", tipoAlmacen=" + tipoAlmacen + ", tieneTarjetaGrafica=" + tieneTarjetaGrafica + '}';
+        return super.toString() + "PC_Escritorio{" + "ram=" + ram + ", almacen=" + almacen + ", tipoAlmacen=" + tipoAlmacen + ", tieneTarjetaGrafica=" + tieneTarjetaGrafica + '}';
     }
-    public String Datos(){
+
+    public String Datos() {
         return toString();
     }
-    
-    
+
 }
