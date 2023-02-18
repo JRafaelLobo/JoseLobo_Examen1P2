@@ -1,6 +1,7 @@
 package com.mycompany.joselobo_examen1p2;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -77,7 +78,8 @@ public class Main extends javax.swing.JFrame {
         Eliminar = new javax.swing.JFrame();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        List_Eliminar = new javax.swing.JList<>();
+        jButton15 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -105,6 +107,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton5.setText("Eliminar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton13.setText("Salir");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +217,6 @@ public class Main extends javax.swing.JFrame {
                 .addGap(56, 56, 56))
         );
 
-        LaptodCrear.setPreferredSize(new java.awt.Dimension(344, 439));
         LaptodCrear.setResizable(false);
         LaptodCrear.setSize(new java.awt.Dimension(344, 439));
 
@@ -464,7 +470,14 @@ public class Main extends javax.swing.JFrame {
 
         jLabel17.setText("Eliminar");
 
-        jScrollPane5.setViewportView(jList1);
+        jScrollPane5.setViewportView(List_Eliminar);
+
+        jButton15.setText("Remove");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout EliminarLayout = new javax.swing.GroupLayout(Eliminar.getContentPane());
         Eliminar.getContentPane().setLayout(EliminarLayout);
@@ -479,6 +492,10 @@ public class Main extends javax.swing.JFrame {
                         .addGap(73, 73, 73)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(88, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton15)
+                .addGap(164, 164, 164))
         );
         EliminarLayout.setVerticalGroup(
             EliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,7 +504,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jButton15)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -549,7 +568,96 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Scanner leer = new Scanner(System.in);
         this.setVisible(false);
+        boolean t;
+        String ip;
+        int id = 0;
+        do {
+            System.out.println("Ingrese el ip: ");
+            ip = leer.next();
+            t = false;
+            for (int i = 0; i < PCs.size(); i++) {
+                if (ip.equals(PCs.get(i).getIp())) {
+                    t = true;
+                    id = i;
+                }
+            }
+        } while (t == false);
+        PC pc1 = PCs.get(id);
+        String opcion;
+        do {
+            opcion = leer.next();
+            switch (opcion) {
+                case "ping" -> {
+                    do {
+                        System.out.println("Ingrese la segundaip: ");
+                        ip = leer.next();
+                        t = false;
+                        for (int i = 0; i < PCs.size(); i++) {
+                            if (ip.equals(PCs.get(i).getIp())) {
+                                t = true;
+                                id = i;
+                            }
+                        }
+                    } while (t == false);
+                    PC pc2 = PCs.get(id);
+                    boolean test = false;
+                    for (int i = 0; i < 10; i++) {
+                        if (pc2.getIp().charAt(i) == pc1.getIp().charAt(i)) {
+                            test = true;
+                        }
+                    }
+                    //test
+                    if (test) {
+                        String a = decimalToBinary(Integer.parseInt(pc2.getMascara().split("\\.")[3]));
+                        int cont = 0;
+                        for (int i = 0; i < 10; i++) {
+                            if (a.indexOf(i) == '1') {
+                                cont++;
+                            }
+                        }
+                        String b = decimalToBinary(Integer.parseInt(pc1.getIp().split("\\.")[3]));
+                        String c = decimalToBinary(Integer.parseInt(pc1.getIp().split("\\.")[3]));
+                        boolean test2 = true;
+                        for (int i = 0; i < cont; i++) {
+                            if (b.indexOf(i) != c.indexOf(i)) {
+                                test2 = false;
+                            }
+                        }
+                        if (test2) {
+                            System.out.println("Pinging to " + pc2.getIp() + " with 32 bits of data: ");
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("Reply from " + pc2.getIp() + ": bytes=32 time=37ms TTL=46");
+                            }
+                            System.out.println("Ping statistics for " + pc2.getIp() + ": ");
+                            System.out.println("packets: sent=4, received= 4, lost=0(0% loss)");
+                            System.out.println(pc1.toString() + "#");
+                        } else {
+                            System.out.println("Pinging to " + pc2.getIp() + " with 32 bits of data: ");
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("Request timed out");
+                            }
+                            System.out.println("Ping statistics for " + pc2.getIp() + ": ");
+                            System.out.println("Packets: sent=4, received= 0, lost=4(100% loss)");
+                            System.out.println(pc1.toString() + "#");
+                        }
+                    } else {
+                        System.out.println("Pinging to " + pc2.getIp() + " with 32 bits of data: ");
+                        for (int i = 0; i < 4; i++) {
+                            System.out.println("Reply from " + pc2.getIp() + ": Destination host unreachable");
+                        }
+                        System.out.println("Ping statistics for " + pc2.getIp() + ": ");
+                        System.out.println("packets: sent=4, received= 0, lost=4(100% loss)");
+                        System.out.println(pc1.toString() + "#");
+                    }
+                }
+                case "show" -> {
+                    System.out.println(PCs.toString());
+                }
+            }
+        } while (opcion.equals("exit"));
+        this.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -602,13 +710,13 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
 
-        Laptop L = new Laptop(MARCA.getText(), DEFPANTALLA.getText(), RGB.getSelectedValue().contains("Si"), IP.getText(),Mascara_Laptod.getText());
+        Laptop L = new Laptop(MARCA.getText(), DEFPANTALLA.getText(), RGB.getSelectedValue().contains("Si"), IP.getText(), Mascara_Laptod.getText());
         PCs.add(L);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        PC_Escritorio E = new PC_Escritorio(Integer.parseInt(RAM.getText()), Integer.parseInt(CAPALMACEN.getText()), TipoDeAlmacenamiento.getSelectedValue(), GRAFICA.getSelectedValue().contains("Si"), IP_Escritorio.getText(),Mascara_Escritorio.getText());
+        PC_Escritorio E = new PC_Escritorio(Integer.parseInt(RAM.getText()), Integer.parseInt(CAPALMACEN.getText()), TipoDeAlmacenamiento.getSelectedValue(), GRAFICA.getSelectedValue().contains("Si"), IP_Escritorio.getText(), Mascara_Escritorio.getText());
         PCs.add(E);
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -624,6 +732,18 @@ public class Main extends javax.swing.JFrame {
         CRUD.setVisible(false);
         Visualizar.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < PCs.size(); i++) {
+            List_Eliminar.add(null, PCs.get(i).getIp());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        PCs.remove(List_Eliminar.getSelectedIndex());
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -680,6 +800,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField IP;
     private javax.swing.JTextField IP_Escritorio;
     private javax.swing.JFrame LaptodCrear;
+    private javax.swing.JList<String> List_Eliminar;
     private javax.swing.JFrame LoT;
     private javax.swing.JTextField MARCA;
     private javax.swing.JTextField Mascara_Escritorio;
@@ -695,6 +816,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -722,7 +844,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
