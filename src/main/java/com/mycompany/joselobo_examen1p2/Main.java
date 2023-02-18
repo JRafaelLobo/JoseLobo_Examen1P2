@@ -238,6 +238,8 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(RGB);
 
+        IP.setText("192.168.");
+
         jButton9.setText("Crear");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,6 +255,8 @@ public class Main extends javax.swing.JFrame {
         });
 
         jLabel18.setText("Mascara");
+
+        Mascara_Laptod.setText("255.255.128.");
 
         javax.swing.GroupLayout LaptodCrearLayout = new javax.swing.GroupLayout(LaptodCrear.getContentPane());
         LaptodCrear.getContentPane().setLayout(LaptodCrearLayout);
@@ -361,7 +365,11 @@ public class Main extends javax.swing.JFrame {
 
         jLabel15.setText("IP");
 
+        IP_Escritorio.setText("192.168.");
+
         jLabel19.setText("Mascara");
+
+        Mascara_Escritorio.setText("255.255.128.");
 
         javax.swing.GroupLayout CrearEscritorioLayout = new javax.swing.GroupLayout(CrearEscritorio.getContentPane());
         CrearEscritorio.getContentPane().setLayout(CrearEscritorioLayout);
@@ -656,7 +664,7 @@ public class Main extends javax.swing.JFrame {
                     System.out.println(PCs.toString());
                 }
             }
-        } while (opcion.equals("exit"));
+        } while (!opcion.equals("exit"));
         this.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -712,12 +720,20 @@ public class Main extends javax.swing.JFrame {
 
         Laptop L = new Laptop(MARCA.getText(), DEFPANTALLA.getText(), RGB.getSelectedValue().contains("Si"), IP.getText(), Mascara_Laptod.getText());
         PCs.add(L);
+        MARCA.setText("");
+        DEFPANTALLA.setText("");
+        IP.setText("192.169.");
+        Mascara_Laptod.setText("255.255.128.");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         PC_Escritorio E = new PC_Escritorio(Integer.parseInt(RAM.getText()), Integer.parseInt(CAPALMACEN.getText()), TipoDeAlmacenamiento.getSelectedValue(), GRAFICA.getSelectedValue().contains("Si"), IP_Escritorio.getText(), Mascara_Escritorio.getText());
         PCs.add(E);
+        RAM.setText("");
+        CAPALMACEN.setText("");
+        IP_Escritorio.setText("192.169.");
+        Mascara_Escritorio.setText("255.255.128.");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed

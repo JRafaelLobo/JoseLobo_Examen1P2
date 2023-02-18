@@ -2,9 +2,9 @@ package com.mycompany.joselobo_examen1p2;
 
 public class PC_Escritorio extends PC {
 
-    int ram, almacen;
-    String tipoAlmacen;
-    boolean tieneTarjetaGrafica;
+    private int ram, almacen;
+    private String tipoAlmacen;
+    private boolean tieneTarjetaGrafica;
 
     public PC_Escritorio() {
     }

@@ -2,8 +2,8 @@ package com.mycompany.joselobo_examen1p2;
 
 public class Laptop extends PC {
 
-    String marca, definicion;
-    boolean traeRGB;
+    private String marca, definicion;
+    private boolean traeRGB;
 
     public Laptop(String marca, String definicion, boolean traeRGB) {
         this.marca = marca;

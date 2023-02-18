@@ -2,7 +2,7 @@ package com.mycompany.joselobo_examen1p2;
 
 public class PC {
 
-    String ip, mascara;
+    private String ip, mascara;
 
     public PC() {
     }
